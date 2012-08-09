@@ -1,0 +1,20 @@
+Here I have added a sample ant build.xml.
+
+<project name="HelloWorld" default="compile" basedir=".">
+	<property name="srcJava" value="SourceCode" />
+	<property name="buildDir" value="bin" />
+	
+	<target name="init">
+    <!-- Create the build directory structure used by compile -->
+    <mkdir dir="${buildDir}"/>
+  	</target>
+  	
+	<target name="cleanBuildDirs" description="clean up"> 
+		<delete dir="${buildDir}/" />
+	</target>
+	
+    <target name="compile" depends="init">
+        <javac srcdir="${srcJava}" destdir="${buildDir}"/>
+    </target>    
+
+</project>
